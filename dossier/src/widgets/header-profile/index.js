@@ -1,0 +1,1 @@
+export { HeaderProfileWidget } from './HeaderProfileWidget'
