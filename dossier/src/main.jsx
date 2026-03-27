@@ -5,7 +5,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import App from './App'
 import { I18nProvider } from '@/shared/i18n/I18nProvider'
-import { theme } from '@/shared/theme/theme'
+import { theme } from '@/shared/ui/theme/theme'
 
 ReactDOM.createRoot(document.getElementById('app')).render(
   <React.StrictMode>

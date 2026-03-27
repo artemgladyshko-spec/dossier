@@ -1,0 +1,57 @@
+export const designTokens = {
+  spacing: {
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 5,
+  },
+  layout: {
+    sectionGap: { xs: 2, md: 3 },
+    formGap: { xs: 2, md: 3 },
+    cardPadding: { xs: 2, md: 3 },
+    inputHeight: 44,
+    radius: 6,
+  },
+  colors: {
+    primary: '#1f5f99',
+    primaryDark: '#194d7d',
+    primarySoft: '#e9f1f8',
+    background: '#eef3f7',
+    backgroundAccent: '#e4ebf2',
+    surface: '#ffffff',
+    border: '#cfdae5',
+    borderStrong: '#b8c7d6',
+    textPrimary: '#14202b',
+    textSecondary: '#526171',
+    textMuted: '#7b8794',
+    success: '#2c6e49',
+    warning: '#a66b1f',
+    error: '#b0433e',
+    sidebarHover: '#f4f7fa',
+    sidebarActive: '#e8f0f8',
+  },
+  shadows: {
+    card: '0 8px 24px rgba(17, 37, 63, 0.06)',
+    cardHover: '0 12px 28px rgba(17, 37, 63, 0.08)',
+    focus: '0 0 0 3px rgba(31, 95, 153, 0.12)',
+  },
+  typography: {
+    pageTitle: {
+      fontSize: '2rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+    },
+    sectionTitle: {
+      fontSize: '1.125rem',
+      fontWeight: 700,
+      lineHeight: 1.3,
+    },
+    label: {
+      fontSize: '0.8125rem',
+      fontWeight: 600,
+      lineHeight: 1.2,
+      letterSpacing: '0.01em',
+    },
+  },
+}

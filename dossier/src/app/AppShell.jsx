@@ -1,5 +1,6 @@
 import { Box, Divider, FormControl, MenuItem, Select, Typography } from '@mui/material'
 import { useI18n } from '@/shared/i18n/useI18n'
+import { designTokens } from '@/shared/ui/theme/tokens'
 
 export function AppShell({ children }) {
   const { locale, setLocale, t } = useI18n()
@@ -27,13 +28,16 @@ export function AppShell({ children }) {
           position: 'sticky',
           top: 0,
           zIndex: 20,
+          boxShadow: '0 2px 10px rgba(17, 37, 63, 0.04)',
         }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.25 }}>
           <Typography variant="subtitle2" color="text.secondary">
             {t('dossier.pageEyebrow')}
           </Typography>
-          <Typography variant="h6">{t('app.title')}</Typography>
+          <Typography variant="h6" sx={{ color: 'text.primary' }}>
+            {t('app.title')}
+          </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Typography variant="body2" color="text.secondary">
@@ -48,7 +52,14 @@ export function AppShell({ children }) {
         </Box>
       </Box>
       <Divider />
-      <Box component="main" sx={{ flex: 1, minWidth: 0 }}>
+      <Box
+        component="main"
+        sx={{
+          flex: 1,
+          minWidth: 0,
+          background: `linear-gradient(180deg, ${designTokens.colors.background} 0%, ${designTokens.colors.backgroundAccent} 100%)`,
+        }}
+      >
         {children}
       </Box>
     </Box>

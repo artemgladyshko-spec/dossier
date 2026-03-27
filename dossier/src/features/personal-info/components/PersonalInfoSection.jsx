@@ -4,13 +4,25 @@ import { Input } from '@/shared/ui/Input'
 import { Card } from '@/shared/ui/Card'
 import { Select } from '@/shared/ui/Select'
 import { useI18n } from '@/shared/i18n/useI18n'
+import { designTokens } from '@/shared/ui/theme/tokens'
 
 export function PersonalInfoSection({ data, errors, onChange }) {
   const { t } = useI18n()
 
   return (
-    <Card id="personal-info" title={t('dossier.section.personalInfo')}>
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
+    <Card
+      id="personal-info"
+      title={t('dossier.section.personalInfo')}
+      subtitle={t('dossier.pageSubtitle')}
+    >
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          gap: designTokens.layout.formGap,
+          alignItems: 'start',
+        }}
+      >
         <Input label={t('field.lastName')} value={data.lastName} error={errors.lastName} onChange={(value) => onChange('lastName', value)} />
         <Input label={t('field.firstName')} value={data.firstName} error={errors.firstName} onChange={(value) => onChange('firstName', value)} />
         <Input label={t('field.middleName')} value={data.middleName} onChange={(value) => onChange('middleName', value)} />
