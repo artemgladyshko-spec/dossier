@@ -8,4 +8,5 @@ export const dossierSchema = {
   performance: ['metrics', 'periods'],
   disciplinary: ['complaints', 'cases'],
   compliance: ['declarations', 'antiCorruption', 'riskFlags'],
+  materials: ['general', 'career', 'documents', 'evaluations', 'performance', 'disciplinary', 'compliance'],
 }

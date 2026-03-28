@@ -38,23 +38,25 @@ export const theme = createTheme({
     fontFamily: '"Segoe UI", "Arial", sans-serif',
     h3: designTokens.typography.pageTitle,
     h4: {
-      fontSize: '1.5rem',
+      fontSize: '1.25rem',
       fontWeight: 700,
-      lineHeight: 1.2,
+      lineHeight: 1.15,
     },
     h6: designTokens.typography.sectionTitle,
     subtitle2: {
-      fontSize: '0.75rem',
+      fontSize: '0.6875rem',
       fontWeight: 700,
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
       color: designTokens.colors.textMuted,
     },
     body1: {
-      lineHeight: 1.55,
+      fontSize: '0.9375rem',
+      lineHeight: 1.45,
     },
     body2: {
-      lineHeight: 1.5,
+      fontSize: '0.875rem',
+      lineHeight: 1.4,
     },
   },
   components: {
@@ -108,8 +110,8 @@ export const theme = createTheme({
           },
         },
         input: {
-          paddingTop: 12,
-          paddingBottom: 12,
+          paddingTop: 10,
+          paddingBottom: 10,
         },
       },
     },
@@ -127,8 +129,8 @@ export const theme = createTheme({
         root: {
           borderBottom: `1px solid ${designTokens.colors.border}`,
           verticalAlign: 'top',
-          paddingTop: 14,
-          paddingBottom: 14,
+          paddingTop: 10,
+          paddingBottom: 10,
         },
         head: {
           backgroundColor: designTokens.colors.backgroundAccent,

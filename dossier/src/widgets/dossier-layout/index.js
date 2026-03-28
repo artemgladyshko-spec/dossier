@@ -1,1 +1,0 @@
-export { DossierLayoutWidget } from './DossierLayoutWidget'

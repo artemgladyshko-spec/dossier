@@ -7,10 +7,10 @@ export const designTokens = {
     xl: 5,
   },
   layout: {
-    sectionGap: { xs: 2, md: 3 },
-    formGap: { xs: 2, md: 3 },
-    cardPadding: { xs: 2, md: 3 },
-    inputHeight: 44,
+    sectionGap: { xs: 1.5, md: 2 },
+    formGap: { xs: 1.5, md: 2 },
+    cardPadding: { xs: 1.5, md: 2.5 },
+    inputHeight: 40,
     radius: 6,
   },
   colors: {
@@ -38,17 +38,17 @@ export const designTokens = {
   },
   typography: {
     pageTitle: {
-      fontSize: '2rem',
+      fontSize: '1.625rem',
       fontWeight: 700,
-      lineHeight: 1.2,
+      lineHeight: 1.15,
     },
     sectionTitle: {
-      fontSize: '1.125rem',
+      fontSize: '1rem',
       fontWeight: 700,
-      lineHeight: 1.3,
+      lineHeight: 1.25,
     },
     label: {
-      fontSize: '0.8125rem',
+      fontSize: '0.75rem',
       fontWeight: 600,
       lineHeight: 1.2,
       letterSpacing: '0.01em',

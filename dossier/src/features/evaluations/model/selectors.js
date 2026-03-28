@@ -6,6 +6,10 @@ export function selectEvaluationsViewModel(dossier, t) {
       { key: 'outcome', label: t('common.outcome') },
       { key: 'score', label: t('common.score') },
     ],
-    rows: dossier.evaluations.records,
+    rows: dossier.evaluations.records.map((item) => ({
+      ...item,
+      cycle: t(item.cycleKey),
+      outcome: t(item.outcomeKey),
+    })),
   }
 }

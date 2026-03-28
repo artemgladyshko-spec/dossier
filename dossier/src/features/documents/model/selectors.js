@@ -8,8 +8,12 @@ export function selectDocumentsViewModel(dossier, t) {
     ],
     registryRows: dossier.documents.registry.map((item) => ({
       ...item,
+      title: t(item.titleKey),
       status: t(`documents.status.${item.status}`),
     })),
-    decisions: dossier.documents.decisions,
+    decisions: dossier.documents.decisions.map((item) => ({
+      ...item,
+      title: t(item.titleKey),
+    })),
   }
 }

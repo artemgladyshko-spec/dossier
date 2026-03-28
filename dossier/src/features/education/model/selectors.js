@@ -6,6 +6,11 @@ export function selectEducationViewModel(dossier, t) {
       { key: 'degree', label: t('common.degree') },
       { key: 'specialization', label: t('common.specialization') },
     ],
-    rows: dossier.education.records,
+    rows: dossier.education.records.map((item) => ({
+      ...item,
+      institution: t(item.institutionKey),
+      degree: t(item.degreeKey),
+      specialization: t(item.specializationKey),
+    })),
   }
 }

@@ -1,0 +1,1 @@
+export { DossierTopTabs } from './DossierTopTabs'
