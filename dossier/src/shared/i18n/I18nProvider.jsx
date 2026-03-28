@@ -5,13 +5,13 @@ import { ua } from '@/shared/i18n/ua'
 const dictionaries = { en, ua }
 
 const I18nContext = createContext({
-  locale: 'en',
+  locale: 'ua',
   setLocale: () => {},
   t: (key) => key,
 })
 
 export function I18nProvider({ children }) {
-  const [locale, setLocale] = useState('en')
+  const [locale, setLocale] = useState('ua')
 
   const value = useMemo(() => {
     const dictionary = dictionaries[locale] ?? dictionaries.en

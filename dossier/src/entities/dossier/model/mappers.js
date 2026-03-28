@@ -5,23 +5,14 @@ export function mapDossierSourceToEntity(source) {
     id: source.profile.dossierId,
     profile: source.profile,
     user: createUserModel(source.profile),
-    personalInfo: source.personalInfo,
-    address: source.address,
-    passport: source.passport,
-    contacts: source.contacts,
+    identity: source.identity,
+    career: source.career,
+    documents: source.documents,
     education: source.education,
-    registryHistory: source.registryHistory,
-    riskAnalysis: source.riskAnalysis,
-  }
-}
-
-export function selectPersonalInfoSections(dossier) {
-  return {
-    personalInfo: dossier.personalInfo,
-    address: dossier.address,
-    passport: dossier.passport,
-    contacts: dossier.contacts,
-    education: dossier.education,
+    evaluations: source.evaluations,
+    performance: source.performance,
+    disciplinary: source.disciplinary,
+    compliance: source.compliance,
   }
 }
 
