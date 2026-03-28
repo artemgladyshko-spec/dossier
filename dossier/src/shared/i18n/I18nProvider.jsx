@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo, useState } from 'react'
-import { en } from '@/shared/i18n/en'
-import { ua } from '@/shared/i18n/ua'
+import { en } from './en'
+import { ua } from './ua'
 
 const dictionaries = { en, ua }
 
