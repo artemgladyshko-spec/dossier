@@ -13,7 +13,8 @@ export function Card({ title, subtitle, children, id, action }) {
         scrollMarginTop: 96,
         borderRadius: 3,
         boxShadow: designTokens.shadows.card,
-        borderColor: designTokens.colors.border,
+        border: `1px solid ${designTokens.colors.border}`,
+        bgcolor: designTokens.colors.surface,
       }}
     >
       {(title || subtitle || action) && (
@@ -24,11 +25,10 @@ export function Card({ title, subtitle, children, id, action }) {
             justifyContent: 'space-between',
             gap: 2,
             pb: 2,
-            borderBottom: 1,
-            borderColor: 'divider',
+            borderBottom: `1px solid ${designTokens.colors.border}`,
           }}
         >
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75, minWidth: 0, flex: 1 }}>
             {title ? (
               <Typography variant="h6" sx={{ color: 'text.primary' }}>
                 {title}

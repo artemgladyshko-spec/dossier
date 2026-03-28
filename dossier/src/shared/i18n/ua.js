@@ -1,5 +1,5 @@
 export const ua = {
-  'app.title': 'Судове досьє',
+  'app.title': 'Суддівське досьє',
   'app.language': 'Мова',
   'portfolio.eyebrow': 'Портфель інспектора',
   'portfolio.title': 'Мої судді',
