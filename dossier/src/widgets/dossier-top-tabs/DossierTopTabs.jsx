@@ -4,6 +4,7 @@ import { designTokens } from '@/shared/ui/theme/tokens'
 
 export function DossierTopTabs({ tabs, value, onChange }) {
   const { t } = useI18n()
+  const firstTabValue = tabs[0]?.value
 
   return (
     <Box
@@ -17,6 +18,7 @@ export function DossierTopTabs({ tabs, value, onChange }) {
         value={value}
         onChange={(_, nextValue) => onChange(nextValue)}
         variant="scrollable"
+        scrollButtons="auto"
         allowScrollButtonsMobile
         TabIndicatorProps={{ style: { display: 'none' } }}
         sx={{
@@ -25,6 +27,16 @@ export function DossierTopTabs({ tabs, value, onChange }) {
             alignItems: 'flex-end',
             gap: 0.5,
           },
+          '& .MuiTabs-scrollButtons.Mui-disabled': {
+            display: 'none',
+          },
+          ...(value === firstTabValue
+            ? {
+                '& .MuiTabs-scrollButtons:first-of-type': {
+                  display: 'none',
+                },
+              }
+            : {}),
         }}
       >
         {tabs.map((tab) => (

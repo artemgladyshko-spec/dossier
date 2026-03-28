@@ -47,11 +47,17 @@ export function DossierHeader({ profile }) {
 
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, minWidth: 0, flex: 1 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
+            <Typography variant="subtitle2" color="text.secondary">
+              {t('dossier.pageEyebrow')}
+            </Typography>
             <Typography variant="h4" sx={{ fontSize: { xs: '1.125rem', md: '1.375rem' }, fontWeight: 700 }}>
               {[profile.lastName, profile.firstName, profile.middleName].filter(Boolean).join(' ')}
             </Typography>
             <Typography variant="body1" color="text.secondary">
               {t(profile.positionKey)}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 760 }}>
+              {t('dossier.pageSubtitle')}
             </Typography>
           </Box>
 

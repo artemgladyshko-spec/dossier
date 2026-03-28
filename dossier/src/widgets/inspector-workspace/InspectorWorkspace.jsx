@@ -1,9 +1,6 @@
-import { Box, Typography } from '@mui/material'
-import { useI18n } from '@/shared/i18n/useI18n'
+import { Box } from '@mui/material'
 
 export function InspectorWorkspace({ sidebar, header, toolbar, tabs, content, contentRef, onContentScroll }) {
-  const { t } = useI18n()
-
   return (
     <Box
       sx={{
@@ -14,11 +11,9 @@ export function InspectorWorkspace({ sidebar, header, toolbar, tabs, content, co
     >
       <Box sx={{ minWidth: 0 }}>{sidebar}</Box>
       <Box
-        ref={contentRef}
-        onScroll={onContentScroll}
         sx={{
           minWidth: 0,
-          overflowY: 'auto',
+          overflow: 'hidden',
           px: { xs: 2, md: 4 },
           py: { xs: 3, md: 4 },
           display: 'flex',
@@ -26,19 +21,40 @@ export function InspectorWorkspace({ sidebar, header, toolbar, tabs, content, co
           gap: 3,
         }}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Typography variant="subtitle2" color="text.secondary">
-            {t('dossier.pageEyebrow')}
-          </Typography>
-          <Typography variant="h3">{t('dossier.pageTitle')}</Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('dossier.pageSubtitle')}
-          </Typography>
+        <Box
+          sx={{
+            position: 'sticky',
+            top: { xs: -24, md: -32 },
+            zIndex: 5,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 3,
+            pb: 1,
+            mx: { xs: -2, md: -4 },
+            px: { xs: 2, md: 4 },
+            background:
+              'linear-gradient(180deg, rgba(238,243,247,0.98) 0%, rgba(238,243,247,0.96) 82%, rgba(238,243,247,0) 100%)',
+            backdropFilter: 'blur(6px)',
+          }}
+        >
+          {header}
+          {toolbar}
+          {tabs}
         </Box>
-        {header}
-        {toolbar}
-        {tabs}
-        <Box sx={{ display: 'grid', gap: 2.5 }}>{content}</Box>
+        <Box
+          ref={contentRef}
+          onScroll={onContentScroll}
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            overflowY: 'auto',
+            display: 'grid',
+            gap: 2.5,
+            pb: 1,
+          }}
+        >
+          {content}
+        </Box>
       </Box>
     </Box>
   )
