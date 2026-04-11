@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createDocument } from '@/entities/document'
 import {
+  courtTypesByLevel,
   dossierTabs,
   dossierViews,
   inspectorCourtGroups,
   inspectorCourtLevelFilters,
-  inspectorJurisdictionFilters,
+  inspectorCourtTypeFilters,
   inspectorStatusFilters,
 } from '@/entities/dossier'
 import { selectAssignedJudges } from '@/entities/dossier'
@@ -23,7 +24,7 @@ export function useInspectorWorkflow(portfolio) {
   const [portfolioFilters, setPortfolioFilters] = useState({
     status: 'all',
     courtLevel: 'all',
-    jurisdiction: 'all',
+    courtType: 'all',
     region: 'all',
   })
   const [selectedTab, setSelectedTab] = useState('general')
@@ -44,6 +45,12 @@ export function useInspectorWorkflow(portfolio) {
     ]
   }, [judges, t])
 
+  const courtTypeOptions = useMemo(() => {
+    const allowedTypes = courtTypesByLevel[portfolioFilters.courtLevel] ?? courtTypesByLevel.all
+
+    return inspectorCourtTypeFilters.filter((option) => option.value === 'all' || allowedTypes.includes(option.value))
+  }, [portfolioFilters.courtLevel])
+
   const filteredJudges = useMemo(() => {
     const normalizedSearch = searchValue.trim().toLowerCase()
 
@@ -54,12 +61,23 @@ export function useInspectorWorkflow(portfolio) {
 
       const matchesStatus = portfolioFilters.status === 'all' || judge.status === portfolioFilters.status
       const matchesCourtLevel = portfolioFilters.courtLevel === 'all' || judge.courtLevel === portfolioFilters.courtLevel
-      const matchesJurisdiction = portfolioFilters.jurisdiction === 'all' || judge.jurisdiction === portfolioFilters.jurisdiction
+      const matchesCourtType = portfolioFilters.courtType === 'all' || judge.courtType === portfolioFilters.courtType
       const matchesRegion = portfolioFilters.region === 'all' || judge.regionKey === portfolioFilters.region
 
-      return matchesSearch && matchesStatus && matchesCourtLevel && matchesJurisdiction && matchesRegion
+      return matchesSearch && matchesStatus && matchesCourtLevel && matchesCourtType && matchesRegion
     })
   }, [judges, portfolioFilters, searchValue, t])
+
+  useEffect(() => {
+    const allowedTypes = courtTypesByLevel[portfolioFilters.courtLevel] ?? courtTypesByLevel.all
+
+    if (portfolioFilters.courtType !== 'all' && !allowedTypes.includes(portfolioFilters.courtType)) {
+      setPortfolioFilters((current) => ({
+        ...current,
+        courtType: 'all',
+      }))
+    }
+  }, [portfolioFilters.courtLevel, portfolioFilters.courtType])
 
   const groupedJudges = useMemo(
     () =>
@@ -219,7 +237,7 @@ export function useInspectorWorkflow(portfolio) {
     portfolioFilterOptions: {
       status: inspectorStatusFilters,
       courtLevel: inspectorCourtLevelFilters,
-      jurisdiction: inspectorJurisdictionFilters,
+      courtType: courtTypeOptions,
       region: regionOptions,
     },
     groupedJudges,

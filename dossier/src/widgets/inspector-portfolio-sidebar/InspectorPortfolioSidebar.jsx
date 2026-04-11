@@ -342,11 +342,11 @@ export function InspectorPortfolioSidebar({
           <TextField
             select
             size="small"
-            label={t('portfolio.filter.jurisdiction')}
-            value={filters.jurisdiction}
-            onChange={(event) => onFilterChange('jurisdiction', event.target.value)}
+            label={t('portfolio.filter.courtType')}
+            value={filters.courtType}
+            onChange={(event) => onFilterChange('courtType', event.target.value)}
           >
-            {filterOptions.jurisdiction.map((option) => (
+            {filterOptions.courtType.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {t(option.labelKey)}
               </MenuItem>

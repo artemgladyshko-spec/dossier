@@ -1,5 +1,5 @@
 export const dossierSchema = {
-  profile: ['photo', 'firstName', 'lastName', 'middleName', 'position', 'department', 'dossierId', 'registryCase', 'status'],
+  profile: ['photo', 'firstName', 'lastName', 'middleName', 'position', 'department', 'dossierId', 'registryCase', 'status', 'courtLevel', 'courtType'],
   identity: ['personalInfo', 'passport', 'contacts'],
   career: ['events', 'courtHistory', 'roles'],
   documents: ['registry', 'decisions'],

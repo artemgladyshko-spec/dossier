@@ -38,7 +38,7 @@ export function selectAssignedJudges(portfolio) {
     registryCase: dossier.profile.registryCase,
     status: dossier.profile.status,
     courtLevel: dossier.profile.courtLevel,
-    jurisdiction: dossier.profile.jurisdiction,
+    courtType: dossier.profile.courtType,
     regionKey: dossier.profile.regionKey,
     activeCases: dossier.profile.activeCases,
     lastActivity: dossier.profile.lastActivity,

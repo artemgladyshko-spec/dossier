@@ -14,21 +14,31 @@ export const inspectorCourtLevelFilters = [
   { value: 'all', labelKey: 'portfolio.filter.courtLevel.all' },
   { value: 'local', labelKey: 'portfolio.courtLevel.local' },
   { value: 'appeal', labelKey: 'portfolio.courtLevel.appeal' },
-  { value: 'higher', labelKey: 'portfolio.courtLevel.higher' },
+  { value: 'higher_specialized', labelKey: 'portfolio.courtLevel.higherSpecialized' },
   { value: 'supreme', labelKey: 'portfolio.courtLevel.supreme' },
 ]
 
-export const inspectorJurisdictionFilters = [
-  { value: 'all', labelKey: 'portfolio.filter.jurisdiction.all' },
-  { value: 'general', labelKey: 'portfolio.jurisdiction.general' },
-  { value: 'administrative', labelKey: 'portfolio.jurisdiction.administrative' },
-  { value: 'commercial', labelKey: 'portfolio.jurisdiction.commercial' },
+export const inspectorCourtTypeFilters = [
+  { value: 'all', labelKey: 'portfolio.filter.courtType.all' },
+  { value: 'general', labelKey: 'portfolio.courtType.general' },
+  { value: 'administrative', labelKey: 'portfolio.courtType.administrative' },
+  { value: 'commercial', labelKey: 'portfolio.courtType.commercial' },
+  { value: 'anticorruption', labelKey: 'portfolio.courtType.anticorruption' },
+  { value: 'intellectual_property', labelKey: 'portfolio.courtType.intellectualProperty' },
 ]
+
+export const courtTypesByLevel = {
+  all: ['general', 'administrative', 'commercial', 'anticorruption', 'intellectual_property'],
+  local: ['general', 'administrative', 'commercial', 'anticorruption'],
+  appeal: ['general', 'administrative', 'commercial'],
+  higher_specialized: ['anticorruption', 'intellectual_property'],
+  supreme: ['general'],
+}
 
 export const inspectorCourtGroups = [
   { value: 'local', labelKey: 'portfolio.group.local' },
   { value: 'appeal', labelKey: 'portfolio.group.appeal' },
-  { value: 'higher', labelKey: 'portfolio.group.higher' },
+  { value: 'higher_specialized', labelKey: 'portfolio.group.higherSpecialized' },
   { value: 'supreme', labelKey: 'portfolio.group.supreme' },
 ]
 

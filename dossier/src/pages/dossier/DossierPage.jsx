@@ -59,6 +59,7 @@ export function DossierPage() {
           <DossierAnalyticsView dossier={selectedJudge} selectedTab={selectedTab} onViewMaterials={handleOpenMaterials} />
         ) : (
           <MaterialsView
+            dossierId={selectedJudge?.profile?.dossierId}
             folders={materialFolders}
             activeFolder={selectedMaterialsFolder}
             onFolderChange={setSelectedMaterialsFolder}
